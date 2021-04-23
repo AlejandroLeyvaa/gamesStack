@@ -28,29 +28,31 @@ const Home = () => {
         />
       </Header>
       <div className="games">
-        <div className='sections'>
+        <div className="sections">
           <h3>Pre-Order</h3>
           <h3>Specials</h3>
           <h3>Trending</h3>
         </div>
-        {state.games.map((item) => (
-          <div
-            className="game"
-            key={item.id}
-            onClick={() => handleCurrentGame(item)}
-          >
-            <ImageContainer cls="game-cover" src={item.cover} />
-            <div className="game-data">
-              <h3>{item.name}</h3>
-              <span> {item.date} </span>
-              {item.platforms.map((platform, i) => (
-                <div key={item.id + i}>
-                  <div className="platform">{platform}</div>
-                </div>
-              ))}
+        <div className='container'>
+          {state.games.map((item) => (
+            <div
+              className="game"
+              key={item.id}
+              onClick={() => handleCurrentGame(item)}
+            >
+              <ImageContainer cls="game-cover" src={item.cover} />
+              <div className="game-data">
+                <h3>{item.name}</h3>
+                <span> {item.date} </span>
+                {item.platforms.map((platform, i) => (
+                  <div key={item.id + i}>
+                    <div className="platform">{platform}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );

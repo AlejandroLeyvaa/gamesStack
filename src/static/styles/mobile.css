@@ -157,7 +157,7 @@ body {
 }
 
 .sections {
-  height: 60px;
+  height: 10vh;
   display: flex;
   align-items: center;
   margin-inline: 1.6rem;
@@ -176,7 +176,10 @@ body {
 .games {
   background-color: #3b4ffe;
   border-top-right-radius: 50px;
-  height: 50vh;
+}
+
+.games .container {
+  height: 40vh;
   overflow-y: auto;
 }
 
