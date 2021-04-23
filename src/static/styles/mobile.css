@@ -75,7 +75,10 @@ body {
 .header {
   width: 100%;
   min-width: 320px;
-  height: 40vh;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .header .menu {
@@ -172,8 +175,8 @@ body {
 
 .games {
   background-color: #3b4ffe;
-  border-top-right-radius: 100px;
-  height: 60vh;
+  border-top-right-radius: 50px;
+  height: 50vh;
   overflow-y: auto;
 }
 
@@ -203,6 +206,7 @@ body {
   height: max-content;
   grid-column: 2/3;
 }
+
 
 
 
