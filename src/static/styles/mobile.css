@@ -75,10 +75,11 @@ body {
 .header {
   width: 100%;
   min-width: 320px;
+  height: 40vh;
 }
 
 .header .menu {
-  height: 50px;
+  height: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -93,7 +94,7 @@ body {
 
 .rec {
   background-color: #fff;
-  width: 40px;
+  width: 20px;
   height: 3px;
 }
 
@@ -102,13 +103,13 @@ body {
 }
 
 .menu-button .rec:last-child {
-  width: 30px;
+  width: 15px;
 }
 
 .header .search-icon {
   background-color: transparent;
-  width: 50px;
-  height: 50px;
+  width: 24px;
+  height: 24px;
 }
 
 .header .search-icon .circle {
@@ -123,27 +124,33 @@ body {
   width: 13px;
   height: 5px;
   position: relative;
-  top: -3px;
+  top: 0px;
   left: 17px;
 }
 
 .header .container {
-  height: 240px;
+  height: 200px;
   padding: 1.6rem;
 }
 
 .hero {
   width: 100%;
+  height: inherit;
   max-height: inherit;
+  display: flex;
+  justify-content: center;
 }
 
+.hero :is(img) {
+  width: 100%;
+}
 .header .game-data {
   height: 80px;
   padding: 1.6rem;
 }
 
 .header .title {
-  padding: 1.6rem;
+  padding-inline: 1.6rem;
 }
 
 .sections {
@@ -196,3 +203,6 @@ body {
   height: max-content;
   grid-column: 2/3;
 }
+
+
+
