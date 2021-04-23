@@ -1,5 +1,7 @@
 import cyberpunk from './assets/images/cyberpunk_2077.jpg';
+import cyberpunkPreview from './assets/images/cyberpunk_preview.jpg';
 import halo from './assets/images/halo.jpg';
+import haloPreview from './assets/images/halo_preview.jpg';
 
 const initialState = {
   user: {},
@@ -8,11 +10,11 @@ const initialState = {
       id: '1',
       name: 'Cyberpunk 2077',
       cover: cyberpunk,
-      previewImage: '',
+      previewImage: cyberpunkPreview,
       rank: 4,
       about: '',
       date: '',
-      platforms: '',
+      platforms: ['XBOX', 'PS4', 'PS5', 'PC'],
       price: 60,
       specifications: '',
       gameplay: '',
@@ -22,11 +24,11 @@ const initialState = {
       id: '2',
       name: 'Halo Infinite',
       cover: halo,
-      previewImage: '',
+      previewImage: haloPreview,
       rank: 4,
       about: '',
       date: '',
-      platforms: '',
+      platforms: ['XBOX'],
       price: 60,
       specifications: '',
       gameplay: '',

@@ -9,9 +9,7 @@ const Home = () => {
 
   const [game, setGame] = useState(state.games[0]);
 
-  console.log(game)
-
-  function handleCurrentGame( currentGame ) {
+  function handleCurrentGame(currentGame) {
     console.log(currentGame);
     setGame(currentGame);
   }
@@ -20,25 +18,40 @@ const Home = () => {
     <>
       <Header>
         <Hero
-            isGameOftheYear = {game.gameOfTheYear}
-            isInDetailsProduct = { false }
-            gameOfTheYear = {game.gameOfTheYear}
-            gameName = {game.name}
-            image = {game.cover}
-            rank = {game.rank}
-            price = {game.price}
-          />
+          isGameOftheYear={game.gameOfTheYear}
+          isInDetailsProduct={false}
+          gameOfTheYear={game.gameOfTheYear}
+          gameName={game.name}
+          image={game.previewImage}
+          rank={game.rank}
+          price={game.price}
+        />
       </Header>
-
-      {state.games.map((item) => (
-        <div
-          className="game"
-          key={item.id}
-          onClick={() => handleCurrentGame(item)}
-        >
-          <ImageContainer src={item.cover} />
+      <div className="games">
+        <div className='sections'>
+          <h3>Pre-Order</h3>
+          <h3>Specials</h3>
+          <h3>Trending</h3>
         </div>
-      ))}
+        {state.games.map((item) => (
+          <div
+            className="game"
+            key={item.id}
+            onClick={() => handleCurrentGame(item)}
+          >
+            <ImageContainer cls="game-cover" src={item.cover} />
+            <div className="game-data">
+              <h3>{item.name}</h3>
+              <span> {item.date} </span>
+              {item.platforms.map((platform, i) => (
+                <div key={item.id + i}>
+                  <div className="platform">{platform}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 };

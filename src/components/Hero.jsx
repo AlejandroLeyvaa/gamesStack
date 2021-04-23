@@ -13,9 +13,11 @@ const Hero = ({
 }) => {
   return (
     <>
-      <h2>Featured</h2>
-      <ImageContainer cls="hero" src={image} alt="" />
-      <div>
+      <h2 className='title'>Featured</h2>
+      <div className='container'>
+        <ImageContainer cls="hero" src={image} alt="" />
+      </div>
+      <div className='game-data'>
         <h3>{gameName}</h3>
         {isGameOftheYear ? <h3>{gameOfTheYear}</h3> : <span />}
         {isInDetailsProduct ? (
@@ -26,7 +28,7 @@ const Hero = ({
         ) : (
           <span />
         )}
-        <span>{ price }</span>
+        <span>{price}</span>
       </div>
     </>
   );

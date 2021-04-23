@@ -7,10 +7,12 @@ const Header = ({ children }) => {
   <header className='header'>
     <menu className='menu'>
       <div className='menu-button'>
-
+        <div className='rec' />
+        <div className='rec' />
       </div>
       <div className="search-icon">
-
+        <div className='circle' />
+        <div className='rec' />
       </div>
     </menu>
       { children }
