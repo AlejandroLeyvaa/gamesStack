@@ -9,13 +9,6 @@ const Details = ({ match }) => {
     state: { games },
   } = useContext(AppContext);
   const currentGame = games.filter((item) => item.id == id);
-  console.log(currentGame);
-
-  // useEffect(() => {
-  //   setGame(currentGame);
-  // }, [])
-
-  // console.log(game)
 
   return (
     <>
@@ -33,17 +26,17 @@ const Details = ({ match }) => {
           developedBy={currentGame[0].developed}
         />
       </Header>
-      <div className="details">
+      <div className='details'>
         <h3 className='about'>About</h3>
-        <p className="about-content">{ currentGame[0].about }</p>
+        <p className='about-content'>{ currentGame[0].about }</p>
         <h3 className='specifications'>Specifications</h3>
         <h4>Minimum</h4>
         {currentGame[0].specifications.minimum.map((item) => (
-          <p key={ Math.random() } className="specifications-content">{ item }</p>
+          <p key={ Math.random() } className='specifications-content'>{ item }</p>
         ))}
         <h4>Recommended</h4>
         {currentGame[0].specifications.recommended.map((item) => (
-          <p key={ Math.random() } className="specifications-content">{ item }</p>
+          <p key={ Math.random() } className='specifications-content'>{ item }</p>
         ))}
       </div>
     </>

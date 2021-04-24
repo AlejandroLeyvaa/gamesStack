@@ -5,6 +5,8 @@ import haloPreview from './assets/images/halo_preview.jpg';
 import redDeadII from './assets/images/red_dead_2.jpg';
 import redDeadIIPreview from './assets/images/red_dead_2_preview.jpg';
 import redReadIIVideo from './assets/videos/red_dead_redemption_2.mp4';
+import cyberPunkVideo from './assets/videos/cyberpunk_2077.mp4';
+import HaloVideo from './assets/videos/halo_infinite.mp4';
 
 const initialState = {
   user: {},
@@ -16,12 +18,31 @@ const initialState = {
       cover: cyberpunk,
       previewImage: cyberpunkPreview,
       rank: 4,
-      about: '',
+      about: `Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.`,
       date: 'Dec 10, 2020',
       platforms: ['XBOX', 'PS4', 'PS5', 'PC'],
       price: 60,
-      specifications: '',
-      gameplay: '',
+      specifications: {
+        minimum: [
+          'Playable: Low graphics, 1080p',
+          'OS: 64-bit Windows 7 or 64-bit Windows 10',
+          'DirectX Version: DirectX 12',
+          'Processor: Intel Core i5-3570K or AMD FX-8310',
+          'Memory: 8 GB',
+          'Graphics Card: Nvidia GeForce GTX 780 3 GB or AMD Radeon RX 470',
+          'Storage: HDD (70 GB, SSD recommended)',
+        ],
+        recommended: [
+          'Playable: High graphics, 1080p',
+          'OS: 64-bit Windows 10',
+          'DirectX Version: DirectX 12',
+          'Processor: Intel Core i7-4790 or AMD Ryzen 3 3200G',
+          'Memory: 12 GB',
+          'Graphics Card: Nvidia GeForce GTX 1060 6 GB or AMD Radeon R9 Fury',
+          'Storage: SDD (70 GB)',
+        ],
+      },
+      gameplay: cyberPunkVideo,
       gameOfTheYear: 'IGN - "Game of the year"',
     },
     {
@@ -31,12 +52,16 @@ const initialState = {
       cover: halo,
       previewImage: haloPreview,
       rank: 4,
-      about: '',
+      about:
+        'When all hope is lost and humanity’s fate hangs in the balance, the Master Chief is ready to confront the most ruthless foe he’s ever faced. The legendary Halo series returns with the most expansive Master Chief story yet.',
       date: 'November 2021',
       platforms: ['XBOX'],
       price: 60,
-      specifications: '',
-      gameplay: '',
+      specifications: {
+        minimum: [],
+        recommended: [],
+      },
+      gameplay: HaloVideo,
       gameOfTheYear: '',
     },
     {

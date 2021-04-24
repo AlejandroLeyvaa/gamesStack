@@ -10,7 +10,6 @@ const Hero = ({
   price,
   developedBy,
 }) => {
-  console.log(rank);
   const [rankElements, setRankElements] = useState([]);
   useEffect(() => {
     const arrSpan = [];
@@ -33,7 +32,7 @@ const Hero = ({
             <h3 className="developers">{developedBy}</h3>
             <div className='rank'>
               {rankElements.map(() => (
-                <span className="star" />
+                <span key={Math.random()} className="star" />
               ))}
             </div>
           </>
