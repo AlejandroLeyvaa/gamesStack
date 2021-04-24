@@ -2,19 +2,9 @@ import React from 'react';
 import Hero from './Hero';
 
 
-const Header = ({ children }) => {
+const Header = ({ children, cls=null }) => {
   return (
-  <header className='header'>
-    <menu className='menu'>
-      <div className='menu-button'>
-        <div className='rec' />
-        <div className='rec' />
-      </div>
-      <div className="search-icon">
-        <div className='circle' />
-        <div className='rec' />
-      </div>
-    </menu>
+  <header className={cls}>
       { children }
   </header>);
 };

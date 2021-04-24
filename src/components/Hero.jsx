@@ -1,34 +1,44 @@
-import React from 'react';
-import axios from 'axios';
-import ImageContainer from './ImageContainer';
+import React, { useState, useEffect } from 'react';
 
 const Hero = ({
+  children,
   isGameOftheYear,
   isInDetailsProduct,
   gameOfTheYear,
   gameName,
-  image,
   rank,
   price,
+  developedBy,
 }) => {
+  console.log(rank);
+  const [rankElements, setRankElements] = useState([]);
+  useEffect(() => {
+    const arrSpan = [];
+    for (let i = 0; i < rank; i++) {
+      arrSpan.push(i);
+    }
+    setRankElements(arrSpan);
+  }, []);
+
   return (
     <>
-      <h2 className='title'>Featured</h2>
-      <div className='container'>
-        <ImageContainer cls="hero" src={image} alt="" />
-      </div>
-      <div className='game-data'>
-        <h3>{gameName}</h3>
-        {isGameOftheYear ? <h3>{gameOfTheYear}</h3> : <span />}
+      {children}
+      <div className="game-data">
+        <h3 className="game-name">{gameName}</h3>
+        {isGameOftheYear ? (
+          <h3 className="game-year">{gameOfTheYear}</h3>
+        ) : null}
         {isInDetailsProduct ? (
           <>
-            <h3>{developedBy}</h3>
-            <span>{rank}</span>
+            <h3 className="developers">{developedBy}</h3>
+            <div className='rank'>
+              {rankElements.map(() => (
+                <span className="star" />
+              ))}
+            </div>
           </>
-        ) : (
-          <span />
-        )}
-        <span>{price}</span>
+        ) : null}
+        <span className="game-price">{price}</span>
       </div>
     </>
   );
