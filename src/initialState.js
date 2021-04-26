@@ -10,6 +10,7 @@ import HaloVideo from './assets/videos/halo_infinite.mp4';
 
 const initialState = {
   user: {},
+  cart: [],
   games: [
     {
       id: '1',
@@ -58,7 +59,7 @@ const initialState = {
       platforms: ['XBOX'],
       price: 60,
       specifications: {
-        minimum: [],
+        minimum: ['XBOX one','XBOX Series X', 'XBOX Series S'],
         recommended: [],
       },
       gameplay: HaloVideo,

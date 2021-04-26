@@ -8,13 +8,20 @@ const useInitialState = () => {
       ...state,
       user: Object.assign(state.user, payload),
     });
+  };
 
-    console.log(state);
+  function addTocart (payload) {
+    setState({
+      ...state,
+      cart: [...state.cart, payload],
+    });
+
   };
 
   return{
     state,
     addUser,
+    addTocart,
   }
 
 };

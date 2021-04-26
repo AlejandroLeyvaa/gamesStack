@@ -37,7 +37,7 @@ const Hero = ({
             </div>
           </>
         ) : null}
-        <span className="game-price">{price}</span>
+        <span className="game-price">${price}.00</span>
       </div>
     </>
   );
