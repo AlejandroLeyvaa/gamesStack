@@ -56,13 +56,14 @@ const Payment = () => {
   return (
     <>
       <section className="payment">
-        <h2 className="Section-title">Order details</h2>
         {cart.length === 0 && <CartEmpty goBack={() => goBack('/')} />}
         {cart.length > 0 && (
           <div className="payment-total">
-            <h2>Total</h2>
-            <h2>$ {total} USD</h2>
-
+            <div className="payment-total-desc">
+              <h1 className="Section-title">Order details</h1>
+              <h2 className='total-title'>Total</h2>
+              <h2 className='price'>$ {total} USD</h2>
+            </div>
             <PayPalButton
               amount={total}
               // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"

@@ -9,13 +9,12 @@ import AppContext from '../context/AppContext';
 
 const Home = ({ match }) => {
   const { state, addTocart } = useContext(AppContext);
-
   const [game, setGame] = useState(state.games[0]);
   const [isGameAdded, setGameAdded] = useState(false);
 
   const hideModal = () => setTimeout(() => {
     setGameAdded(false);
-  }, 1000);
+  }, 10000000);
 
   function handleCurrentGame(currentGame) {
     setGame(currentGame);
@@ -42,7 +41,7 @@ const Home = ({ match }) => {
         >
           <h2 className="title">Featured</h2>
           <div className="container">
-            <ImageContainer cls="hero" src={game.previewImage} alt="" />
+            <ImageContainer cls="hero" src={game.previewImage} srcTablet={game.tabletImage} srcDesktop={game.desktopImage} alt={game.name} />
           </div>
         </Hero>
       </Header>

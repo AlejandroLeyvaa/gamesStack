@@ -524,3 +524,70 @@ a:hover {
   color: #fff;
   margin: 1.6rem 0;
 }
+
+.payment {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-total {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.payment-total-desc {
+  display: grid;
+  grid-gap: .8rem;
+}
+
+.payment-total-desc :is(h1) {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.payment-total-desc :is(.total-title) {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.payment-total-desc :is(.price) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.payment-total-desc :is(h1) {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.payment-item {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1/4;
+  margin: 0 auto;
+}
+.empty {
+  background: transparent;
+  border: 3px dashed #fff;
+  color: #fff;
+  margin: 0 auto;
+  padding: 1.6rem;
+}
+
+.empty:hover, empty:active {
+  cursor: pointer;
+  border: 3px dashed rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, .5);
+
+}

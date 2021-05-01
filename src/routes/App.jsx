@@ -7,6 +7,8 @@ import Payment from '../containers/Payment';
 import Details from '../containers/Details';
 
 import '../static/styles/mobile.css';
+import '../static/styles/tablet.css';
+import '../static/styles/desktop.css';
 
 const App = () => {
   const initialState = useInitialState();

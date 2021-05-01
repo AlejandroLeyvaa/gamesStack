@@ -1,0 +1,35 @@
+@media screen and (min-width: 768px) {
+  .header,
+  .header-details {
+    height: 70vh;
+    justify-content: start;
+  }
+
+  .header .menu {
+    height: 100px;
+  }
+
+  .hero :is(picture) {
+    height: revert;
+  }
+
+  .header .container {
+    height: revert;
+    padding: 1.6rem 0;
+  }
+
+  .games .container {
+    height: 20vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow-y: auto;
+  }
+
+  .game {
+    margin-inline: 1.6rem;
+  }
+
+  .platforms {
+    width: 120px;
+  }
+}

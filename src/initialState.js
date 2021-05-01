@@ -1,12 +1,20 @@
 import cyberpunk from './assets/images/cyberpunk_2077.jpg';
 import cyberpunkPreview from './assets/images/cyberpunk_preview.jpg';
+import cyberpunkTablet from './assets/images/cyberpunk2077_tablet.jpg';
+import cyberpunkDesktop from './assets/images/cyberpunk2077_desktop1600.jpg';
+import cyberPunkVideo from './assets/videos/cyberpunk_2077.mp4';
+
 import halo from './assets/images/halo.jpg';
 import haloPreview from './assets/images/halo_preview.jpg';
+import haloTablet from './assets/images/halo_infinite_tablet.jpg';
+import haloDesktop from './assets/images/halo_infinite_desktop1600.jpg';
+import HaloVideo from './assets/videos/halo_infinite.mp4';
+
 import redDeadII from './assets/images/red_dead_2.jpg';
 import redDeadIIPreview from './assets/images/red_dead_2_preview.jpg';
+import redDeadIITablet from './assets/images/red_dead_2_tablet.jpg';
+import redDeadIIDesktop from './assets/images/red_dead_2_desktop1600.jpg';
 import redReadIIVideo from './assets/videos/red_dead_redemption_2.mp4';
-import cyberPunkVideo from './assets/videos/cyberpunk_2077.mp4';
-import HaloVideo from './assets/videos/halo_infinite.mp4';
 
 const initialState = {
   user: {},
@@ -21,6 +29,8 @@ const initialState = {
       developed: 'CD Project Red',
       cover: cyberpunk,
       previewImage: cyberpunkPreview,
+      tabletImage: cyberpunkTablet,
+      desktopImage: cyberpunkDesktop,
       rank: 4,
       about: `Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.`,
       date: 'Dec 10, 2020',
@@ -55,6 +65,8 @@ const initialState = {
       developed: '343i',
       cover: halo,
       previewImage: haloPreview,
+      tabletImage: haloTablet,
+      desktopImage: haloDesktop,
       rank: 4,
       about:
         'When all hope is lost and humanity’s fate hangs in the balance, the Master Chief is ready to confront the most ruthless foe he’s ever faced. The legendary Halo series returns with the most expansive Master Chief story yet.',
@@ -74,6 +86,8 @@ const initialState = {
       developed: 'Rockstar Games',
       cover: redDeadII,
       previewImage: redDeadIIPreview,
+      tabletImage: redDeadIITablet,
+      desktopImage: redDeadIIDesktop,
       rank: 4,
       about: `America, 1899. The end of the Wild West era has begun. After a robbery
               goes badly wrong in the western town of Blackwater, Arthur Morgan and
