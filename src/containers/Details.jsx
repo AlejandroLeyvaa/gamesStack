@@ -5,7 +5,7 @@ import Hero from '../components/Hero';
 import AppContext from '../context/AppContext';
 
 const Details = ({ match }) => {
-  const { state, addTocart } = useContext(AppContext);
+  const { state, addTocart, addTotal } = useContext(AppContext);
   const [isGameAdded, setGameAdded] = useState(false);
   const history = useHistory();
   const { id } = match.params;
@@ -30,8 +30,9 @@ const Details = ({ match }) => {
     hideModal();
   };
 
-  const showState = () => {
-    console.log(state.cart);
+  const goTo = () => {
+    addTotal();
+    history.push('/payment');
   };
 
   return (
@@ -62,7 +63,10 @@ const Details = ({ match }) => {
             {item}
           </p>
         ))}
-        <h4>Recommended</h4>
+
+        {currentGame[0].specifications.recommended.length > 0 && (
+          <h4>Recommended</h4>
+        )}
         {currentGame[0].specifications.recommended.map((item) => (
           <p key={Math.random()} className="specifications-content">
             {item}
@@ -72,16 +76,20 @@ const Details = ({ match }) => {
       <div className="box" />
 
       {isGameAdded ? (
-        <div className='game-added-modal'>
+        <div className="game-added-modal">
           <h3>Game added</h3>
         </div>
       ) : null}
 
       <div className="buttons">
-        <button className="button like" onClick={showState}></button>
-        <button className="button add-cart" onClick={handleAddTocart}>
-          Add To Cart{' '}
-        </button>
+        <button className="button like"></button>
+        {state.cart.length === 0 ? (
+          <button className="button add-cart" onClick={handleAddTocart}>
+            Add To Cart
+          </button>
+        ) : (
+          <button className="button add-cart" onClick={goTo}>Go To Pay</button>
+        )}
       </div>
     </>
   );

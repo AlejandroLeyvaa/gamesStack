@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useHistory } from 'react-router';
+import AppContext from '../context/AppContext';
 
 const Hero = ({
   children,
@@ -9,8 +11,11 @@ const Hero = ({
   rank,
   price,
   developedBy,
+  cart,
 }) => {
+  const { addTotal } = useContext(AppContext);
   const [rankElements, setRankElements] = useState([]);
+  const history = useHistory();
   useEffect(() => {
     const arrSpan = [];
     for (let i = 0; i < rank; i++) {
@@ -18,6 +23,11 @@ const Hero = ({
     }
     setRankElements(arrSpan);
   }, []);
+
+  const handleClick = () => {
+    addTotal();
+    history.push('/payment');
+  };
 
   return (
     <>
@@ -30,7 +40,7 @@ const Hero = ({
         {isInDetailsProduct ? (
           <>
             <h3 className="developers">{developedBy}</h3>
-            <div className='rank'>
+            <div className="rank">
               {rankElements.map(() => (
                 <span key={Math.random()} className="star" />
               ))}
@@ -38,6 +48,7 @@ const Hero = ({
           </>
         ) : null}
         <span className="game-price">${price}.00</span>
+        {cart.length > 0 && (<button className='button buy' onClick={handleClick}>Go To Pay</button> )}
       </div>
     </>
   );

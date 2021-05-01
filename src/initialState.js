@@ -11,6 +11,9 @@ import HaloVideo from './assets/videos/halo_infinite.mp4';
 const initialState = {
   user: {},
   cart: [],
+  favs: [],
+  orders: [],
+  total: null,
   games: [
     {
       id: '1',
@@ -67,7 +70,7 @@ const initialState = {
     },
     {
       id: '3',
-      name: 'Red Deade Redemption II',
+      name: 'Red Dead Redemption II',
       developed: 'Rockstar Games',
       cover: redDeadII,
       previewImage: redDeadIIPreview,
