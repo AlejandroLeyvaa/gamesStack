@@ -1,27 +1,48 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../context/AppContext';
 import { useHistory } from 'react-router-dom';
 import config from '../config';
 import Product from '../components/Product';
 import CartEmpty from '../components/CartEmpty';
-import { PayPalButton } from "react-paypal-button-v2";
+import { PayPalButton } from 'react-paypal-button-v2';
+import Modal from '../components/Modal';
 
 const Payment = () => {
+  const [modal, setModal] = useState(false);
+  const [detailsData, setDetailsData] = useState({});
   const { state, removeItem, addNewOrder } = useContext(AppContext);
   const { cart, total, user } = state;
   const history = useHistory();
 
-  // const handlePaymentSuccess = (data) => {
-  //   if (data.status === 'COMPLETED') {
-  //     const newOrder = {
-  //       user,
-  //       product: cart,
-  //       payment: data,
-  //     };
-  //     addNewOrder(newOrder);
-  //     history.push('/checkout/success');
-  //   }
-  // };
+  const clientId = config.clientIdPaypal;
+
+  const paypalOptions = {
+    clientId,
+    intent: 'capture',
+  };
+
+  const buttonStyles = {
+    layout: 'vertical',
+    shape: 'rect',
+  };
+
+  const handlePaymentSuccess = (data) => {
+    if (data.status === 'COMPLETED') {
+      const newOrder = {
+        user,
+        product: cart,
+        payment: data,
+      };
+      addNewOrder(newOrder);
+      history.push('/');
+    }
+  };
+
+  const hideModal = () => {
+    setTimeout(() => {
+      setModal(false);
+    }, 1000);
+  };
 
   const handleRemove = (item, index) => {
     removeItem(item, index);
@@ -41,21 +62,18 @@ const Payment = () => {
           <div className="payment-total">
             <h2>Total</h2>
             <h2>$ {total} USD</h2>
+
             <PayPalButton
               amount={total}
               // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
               onSuccess={(details, data) => {
-                alert(
-                  'Transaction completed by ' + details.payer.name.given_name
-                );
-
+                setDetailsData(details);
+                hideModal();
                 // OPTIONAL: Call your server to save the transaction
-                return fetch('/paypal-transaction-complete', {
-                  method: 'post',
-                  body: JSON.stringify({
-                    orderID: data.orderID,
-                  }),
-                });
+                return setModal(true);
+              }}
+              options={{
+                clientId,
               }}
             />
           </div>
@@ -71,6 +89,11 @@ const Payment = () => {
             />
           ))}
         </div>
+        {modal && (
+          <Modal
+            message={`Transaction completed by ${detailsData.payer.name.given_name}`}
+          />
+        )}
       </section>
     </>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Modal = () => {
+const Modal = ({ message }) => {
   return (
     <div className="game-added-modal">
-      <h3>Game added</h3>
+      <h3>{message}</h3>
     </div>
   );
 };

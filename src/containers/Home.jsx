@@ -15,7 +15,7 @@ const Home = ({ match }) => {
 
   const hideModal = () => setTimeout(() => {
     setGameAdded(false);
-  }, 300000);
+  }, 1000);
 
   function handleCurrentGame(currentGame) {
     setGame(currentGame);
@@ -47,7 +47,7 @@ const Home = ({ match }) => {
         </Hero>
       </Header>
       <div className="games">
-      {isGameAdded && <Modal />}
+      {isGameAdded && <Modal message='Game added'/>}
         <div className="sections">
           {/* <h3>Pre-Order</h3>
           <h3>Specials</h3>
