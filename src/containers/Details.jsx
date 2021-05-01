@@ -21,7 +21,7 @@ const Details = ({ match }) => {
   const hideModal = () => {
     setTimeout(() => {
       setGameAdded(false);
-    }, 3000);
+    }, 30000000);
   };
 
   const handleAddTocart = () => {

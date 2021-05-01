@@ -4,26 +4,22 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import ImageContainer from '../components/ImageContainer';
 import Menu from '../components/Menu';
+import Modal from '../components/Modal';
 import AppContext from '../context/AppContext';
 
-const Home = () => {
+const Home = ({ match }) => {
   const { state, addTocart } = useContext(AppContext);
 
   const [game, setGame] = useState(state.games[0]);
   const [isGameAdded, setGameAdded] = useState(false);
 
-  useEffect(() => {
-    console.log('Hide')
-
-    const hideModal = setTimeout(() => {
-      setGameAdded(false);
-    }, 3000);
-
-    return () => clearTimeout(hideModal);
-  }, []);
+  const hideModal = () => setTimeout(() => {
+    setGameAdded(false);
+  }, 300000);
 
   function handleCurrentGame(currentGame) {
     setGame(currentGame);
+    hideModal();
   }
 
   const handleAddTocart = (game) => {
@@ -38,11 +34,11 @@ const Home = () => {
         <Hero
           isGameOftheYear={game.gameOfTheYear}
           isInDetailsProduct={false}
-          cart={ state.cart }
           gameOfTheYear={game.gameOfTheYear}
           gameName={game.name}
           rank={game.rank}
           price={game.price}
+          location={match.path}
         >
           <h2 className="title">Featured</h2>
           <div className="container">
@@ -51,11 +47,7 @@ const Home = () => {
         </Hero>
       </Header>
       <div className="games">
-      {isGameAdded ? (
-          <div className="game-added-modal">
-            <h3>Game added</h3>
-          </div>
-        ) : null}
+      {isGameAdded && <Modal />}
         <div className="sections">
           {/* <h3>Pre-Order</h3>
           <h3>Specials</h3>

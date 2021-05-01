@@ -389,7 +389,6 @@ a:hover {
   );
 }
 
-
 .game-added-modal {
   background: #3b4ffe;
   height: 100px;
@@ -399,12 +398,12 @@ a:hover {
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 30vh;
+  top: 0;
   z-index: 10;
 }
 
 .games .game-added-modal {
-  bottom: 60vh;
+  top: 0;
 }
 
 .details .game-added-modal {
