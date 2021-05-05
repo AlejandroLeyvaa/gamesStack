@@ -14,7 +14,7 @@ const Home = ({ match }) => {
 
   const hideModal = () => setTimeout(() => {
     setGameAdded(false);
-  }, 10000000);
+  }, 3000);
 
   function handleCurrentGame(currentGame) {
     setGame(currentGame);
@@ -29,7 +29,7 @@ const Home = ({ match }) => {
   return (
     <>
       <Header cls="header">
-        <Menu />
+        {/* <Menu /> */}
         <Hero
           isGameOftheYear={game.gameOfTheYear}
           isInDetailsProduct={false}
@@ -39,7 +39,7 @@ const Home = ({ match }) => {
           price={game.price}
           location={match.path}
         >
-          <h2 className="title">Featured</h2>
+          {/* <h2 className="title">Featured</h2> */}
           <div className="container">
             <ImageContainer cls="hero" src={game.previewImage} srcTablet={game.tabletImage} srcDesktop={game.desktopImage} alt={game.name} />
           </div>

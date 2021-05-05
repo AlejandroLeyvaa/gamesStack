@@ -11,7 +11,7 @@ const DetailsComponent = ({game}) => {
   const hideModal = () => {
     setTimeout(() => {
       setGameAdded(false);
-    }, 1000);
+    }, 3000);
   };
 
   const handleAddTocart = () => {
