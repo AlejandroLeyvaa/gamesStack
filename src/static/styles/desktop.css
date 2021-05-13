@@ -1,5 +1,14 @@
 @media screen and (min-width: 1024px) {
 
+  .header, .header-details, .games, .details, .buttons {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .header-details .return {
+    width: revert;
+  }
+
   .header, .header-details {
     height: revert;
     justify-content: start;
@@ -16,5 +25,13 @@
 
   .platforms {
     width: revert;
+  }
+
+  .video {
+    width: revert;
+  }
+
+  .box {
+    display: none;
   }
 }
