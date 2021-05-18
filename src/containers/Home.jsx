@@ -24,6 +24,7 @@ const Home = ({ match }) => {
   const handleAddTocart = (game) => {
     addTocart(game);
     setGameAdded(true);
+    hideModal();
   };
 
   return (

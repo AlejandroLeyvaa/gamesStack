@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production  && node ./scripts/create-redirects.js",
+    "build": "node ./scripts/create-env.js && webpack --mode production && node ./scripts/create-redirects.js",
     "dev": "webpack-dev-server --open --mode development"
   },
   "author": "",
@@ -30,6 +30,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
+    "dotenv": "^8.2.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
